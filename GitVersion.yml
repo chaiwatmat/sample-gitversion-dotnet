@@ -14,40 +14,24 @@ commits-since-version-source-padding: 4
 commit-message-incrementing: Enabled
 branches:
   develop:
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: alpha
     increment: Patch
     prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
+    track-merge-target: false
     regex: develop
     source-branches: []
-    tracks-release-branches: true
-    is-release-branch: true
-    is-mainline: false
-    pre-release-weight: 0
-  release:
-    mode: ContinuousDeployment
-    tag: beta
-    increment: Patch
-    prevent-increment-of-merged-branch-version: true
-    track-merge-target: false
-    regex: ^releases?[/-]
-    source-branches:
-      - develop
-      - master
-      - support
-      - release
     tracks-release-branches: false
-    is-release-branch: true
-    is-mainline: false
-    pre-release-weight: 30000
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 10000
   master:
     mode: ContinuousDeployment
     tag: ""
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: ^master$
+    regex: master
     source-branches:
       - develop
       - release

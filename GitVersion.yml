@@ -34,7 +34,7 @@ branches:
   gitversion:
     mode: ContinuousDeployment
     tag: build
-    increment: Minor
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     regex: ^gitversion?$

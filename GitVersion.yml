@@ -1,5 +1,5 @@
-assembly-versioning-format: "{MajorMinorPatch}.{PreReleaseNumber}"
-assembly-file-versioning-format: "{MajorMinorPatch}.{PreReleaseNumber}"
+assembly-versioning-format: "{Major}.{Minor}.{PreReleaseNumber}"
+assembly-file-versioning-format: "{Major}.{Minor}.{PreReleaseNumber}"
 
 mode: ContinuousDeployment
 tag-prefix: "[vV]"
@@ -12,27 +12,26 @@ legacy-semver-padding: 4
 build-metadata-padding: 4
 commits-since-version-source-padding: 4
 commit-message-incrementing: Enabled
-increment: Patch
 branches:
   develop:
     mode: ContinuousDeployment
     tag: alpha
-    increment: Minor
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
-    regex: ^dev(elop)?(ment)?$
+    track-merge-target: false
+    regex: develop
     source-branches: []
-    tracks-release-branches: true
+    tracks-release-branches: false
     is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 0
+    is-mainline: true
+    pre-release-weight: 10000
   master:
     mode: ContinuousDeployment
     tag: ""
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: ^master$
+    regex: master
     source-branches:
       - develop
       - release
@@ -40,22 +39,6 @@ branches:
     is-release-branch: false
     is-mainline: true
     pre-release-weight: 55000
-  release:
-    mode: ContinuousDeployment
-    tag: beta
-    increment: Patch
-    prevent-increment-of-merged-branch-version: true
-    track-merge-target: false
-    regex: ^releases?[/-]
-    source-branches:
-      - develop
-      - master
-      - support
-      - release
-    tracks-release-branches: false
-    is-release-branch: true
-    is-mainline: false
-    pre-release-weight: 30000
   support:
     mode: ContinuousDeployment
     tag: ""

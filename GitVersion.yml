@@ -1,5 +1,4 @@
-assembly-versioning-scheme: MajorMinorPatch
-assembly-file-versioning-scheme: MajorMinorPatch
+next-version: 0.0.1
 
 assembly-versioning-format: "{MajorMinorPatch}.{PreReleaseNumber}"
 assembly-file-versioning-format: "{MajorMinorPatch}.{PreReleaseNumber}"

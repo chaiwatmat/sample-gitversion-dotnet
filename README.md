@@ -3,7 +3,8 @@
 ## build
 
 ```sh
-dotnet build /p:Version=$(gitversion -showvariable AssemblySemFileVer) /p:AssemblyVersion=$(gitversion -showvariable AssemblySemFileVer)
+export version=$(gitversion -showvariable AssemblySemFileVer)
+dotnet build /p:Version=$version /p:AssemblyVersion=$version
 ```
 
 ## check version

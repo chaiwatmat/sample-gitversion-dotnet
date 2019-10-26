@@ -14,6 +14,7 @@ legacy-semver-padding: 4
 build-metadata-padding: 4
 commits-since-version-source-padding: 4
 commit-message-incrementing: Enabled
+increment: Patch
 branches:
   develop:
     mode: ContinuousDeployment
@@ -22,18 +23,6 @@ branches:
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     regex: ^dev(elop)?(ment)?$
-    source-branches: []
-    tracks-release-branches: true
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 0
-  gitversion:
-    mode: ContinuousDeployment
-    tag: build
-    increment: Minor
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
-    regex: ^gitversion?$
     source-branches: []
     tracks-release-branches: true
     is-release-branch: false
@@ -67,58 +56,6 @@ branches:
       - release
     tracks-release-branches: false
     is-release-branch: true
-    is-mainline: false
-    pre-release-weight: 30000
-  feature:
-    mode: ContinuousDeployment
-    tag: useBranchName
-    increment: Inherit
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: false
-    regex: ^features?[/-]
-    source-branches:
-      - develop
-      - master
-      - release
-      - feature
-      - support
-      - hotfix
-    tracks-release-branches: false
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 30000
-  pull-request:
-    mode: ContinuousDeployment
-    tag: PullRequest
-    increment: Inherit
-    prevent-increment-of-merged-branch-version: false
-    tag-number-pattern: '[/-](?<number>\d+)'
-    track-merge-target: false
-    regex: ^(pull|pull\-requests|pr)[/-]
-    source-branches:
-      - develop
-      - master
-      - release
-      - feature
-      - support
-      - hotfix
-    tracks-release-branches: false
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 30000
-  hotfix:
-    mode: ContinuousDeployment
-    tag: beta
-    increment: Patch
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: false
-    regex: ^hotfix(es)?[/-]
-    source-branches:
-      - develop
-      - master
-      - support
-    tracks-release-branches: false
-    is-release-branch: false
     is-mainline: false
     pre-release-weight: 30000
   support:

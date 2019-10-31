@@ -1,7 +1,7 @@
 # assembly-versioning-format: "{Major}.{Minor}.{Patch}.{PreReleaseNumber}"
 # assembly-file-versioning-format: "{Major}.{Minor}.{Patch}.{PreReleaseNumber}"
 
-mode: MainLine
+mode: ContinuousDeployment
 # tag-prefix: "[vV]"
 # continuous-delivery-fallback-tag: ci
 # major-version-bump-message: '\+semver:\s?(breaking|major)'

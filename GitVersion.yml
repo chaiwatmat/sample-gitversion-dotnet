@@ -1,5 +1,5 @@
-# assembly-versioning-format: "{Major}.{Minor}.{Patch}.{PreReleaseNumber}"
-# assembly-file-versioning-format: "{Major}.{Minor}.{Patch}.{PreReleaseNumber}"
+assembly-versioning-format: "{Major}.{Minor}.{env:PreReleaseNumber ?? 0}"
+assembly-file-versioning-format: "{Major}.{Minor}.{env:PreReleaseNumber ?? 0}"
 
 mode: ContinuousDeployment
 # tag-prefix: "[vV]"
